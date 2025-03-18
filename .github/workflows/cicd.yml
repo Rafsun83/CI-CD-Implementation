@@ -1,0 +1,4 @@
+name: CICD Implementation
+
+on: [push]
+jobs: 
