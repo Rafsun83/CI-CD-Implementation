@@ -37,7 +37,7 @@ describe('Server Tests', () => {
         .end((err, res) => {
           expect(res).to.have.status(200);
           expect(res.body).to.be.an('object');
-          expect(res.body.message).to.equal('Hello World changes');
+          expect(res.body.message).to.equal('Hello World changes new');
           done();
         });
     });
