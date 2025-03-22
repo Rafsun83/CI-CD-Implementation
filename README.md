@@ -106,7 +106,7 @@ npm start  # run your application
         # After configuring restart the server - sudo service nginx restart all  
         # SSL for HTTPS - using certbot  
 
-## Note: After completing a manual deployment, the main issue arises when changes need to be made to the application. You would have to redeploy manually by following:  
+#### Note: After completing a manual deployment, the main issue arises when changes need to be made to the application. You would have to redeploy manually by following:  
 1. git pull to the directory  
 2. npm install  
 3. pm2 restart all  
