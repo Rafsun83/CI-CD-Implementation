@@ -186,10 +186,11 @@ So, managing this manually is cumbersome. To solve this, we implement **CI/CD**.
 
 ### Steps:  
 ```bash
-# Write build yml instructions and use an artifact package to manage build files. Example given in the **CI/CD implementation repository**.  
-# We use artifact package:  
-		1. **Upload artifact** - This is used in build yml instructions to upload build files.  
-		2. **Download artifact** - This is used in deploy yml instructions to download and deploy the build.  
+# Write build yml instructions and use an artifact package to manage build files. Example given in the **CI/CD implementation repository**. 
+
+# We use artifact package example given yml file of CI/CD implementation repository:  
+1. **Upload artifact** - This is used in build yml instructions to upload build files.  
+2. **Download artifact** - This is used in deploy yml instructions to download and deploy the build.  
 ```
 
 #### Note: Every instruction depends on the previous steps.  
