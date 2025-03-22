@@ -35,7 +35,7 @@ npm start
    ```
 
 
-# Deploying to staging environment (manual deploy process to CICD Implementation as well as use nginx for port forwarding)
+## Deploying to staging environment (manual deploy process to CICD Implementation as well as use nginx for port forwarding)
 
 ## Manual Deployment
 -> Initially need to upload git to your project. Then after upload your project in git you need to login your server.  
