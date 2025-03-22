@@ -43,16 +43,23 @@ npm start
 ### Steps:
 ```bash 
 # Firstly connect your server via ssh or ip and pass
+
 mkdir first_deployemnt #Create a Directory and move to the directory
+
 git clone #Clone your project in your directory
+
 # install required dependency for example install node/update 
+
 nvm --version # firstly check nvm version a package manager. if do not exist then execute below command
        	b. curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash  
 		   c. source ~/.bashrc   # or source ~/.zshrc if using Zsh  
 		   d. nvm install 22  
 		   e. node -v 
+
 install npm # Install npm
+
 npm run check # Check your test case. This command will be different for your project wise
+
 npm start  # run your application
 
 # Note: After running your application, it will be running on your terminal. If you close your terminal, then the application will be closed. To solve this problem, use pm2 - background process manager. It will keep your application running in the background.  
