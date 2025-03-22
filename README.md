@@ -146,18 +146,31 @@ So, managing this manually is cumbersome. To solve this, we implement **CI/CD**.
 ## 4. Self-hosted runner setup for CI/CD
 
 ### Steps:  
-	# Create a directory in the root of the application - .github/workflow/cicd.yml  
-	# Write yml code instructions -  
-		# Example of yml in my CICD implementation project  
-		1. First, implement application tests - like writing test cases in the yml file.  
+```bash
+# Create a directory in the root of the application
+1. .github/workflow/cicd.yml
+
+
+# Write yml code instructions -  
+# Example of yml in my CICD implementation project  
+		1. First, implement application tests - like writing test cases in the yml file. 
+
 		2. Then, after the test, we need deployment. But currently, the VPS is not connected to Git, so the VPS doesn't understand when we push code to Git. We solve this problem by setting up a GitHub runner. We delete the previous application directory from the VPS server, create another directory, and execute some commands from the GitHub runner.  
+
 		3. After executing all commands successfully, configure the GitHub runner.  
+
 		4. Then, run it using the following command - `./run.sh` // However, this command has limitations. When you close the terminal, it stops automatically. To solve this, use `./svc.sh` or `pm2`. Since `./svc.sh` is GitHub's built-in process manager, we will use it.  
+
 		5. Solve this problem by installing - `sudo ./svc.sh install`  
+
 		6. After installation, start the runner - `sudo ./svc.sh start`  
+
 		7. Now, write yml instructions for deployment after test execution. Example written in the **CI/CD implementation repository**.  
+
 		8. After pushing the code, deployment happens automatically.  
-		9. Sometimes, we need to build the application before deployment, e.g., in React/Next.js projects. Follow the build steps before deployment.  
+      
+		9. Sometimes, we need to build the application before deployment, e.g., in React/Next.js projects. Follow the build steps before deployment.
+```  
 
 ## 5. Artifact (for managing build files before deployment)
 
