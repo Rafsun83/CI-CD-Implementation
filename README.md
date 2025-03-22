@@ -74,15 +74,24 @@ npm start
 
 ## 2. PM2 - Process Manager (run your application in the background and monitor the process)
 ### Steps: 
- 	# Install pm2 - `npm install -g pm2`  
- 	# Show status - pm2 status  
- 	# Start your application by pm2 - pm2 start "npm start" --name="node_app" // Here define your application start command and also define your application name as per your choice.  
+
+```bash
+ 	# Install pm2
+   1. npm install -g pm2
+
+ 	# Show status
+   2. pm2 status
+
+ 	# Start your application by pm2 // Here define your application start command and also define your application name as per your choice. 
+   3. pm2 start "npm start" --name="node_app"
+    
  	# Some necessary commands below:
  		a. pm2 restart app_name  
 		b. pm2 reload app_name  
 		c. pm2 stop app_name  
 		d. pm2 delete app_name  
 		Note: You can run all types of applications in the background using this process manager.  
+```
 
 ## 3. NginX (To access your application without specifying a port, we use Nginx for port forwarding)
 ### Steps:  
