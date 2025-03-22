@@ -35,27 +35,31 @@ npm start
    ```
 
 
-## Deploying to staging environment (manual deploy process to CICD Implementation as well as use nginx for port forwarding)
+# Deploying to staging environment (manual deploy process to CICD Implementation as well as use nginx for port forwarding)
 
-## Manual Deployment
--> Initially need to upload git to your project. Then after upload your project in git you need to login your server.  
-# Server would be local computer or Vpc or cloud  
+## 1. Manual Deployment
+> Initially need to upload git to your project. Then after upload your project in git you need to login your server.Server would be local computer or Vpc or cloud  
+
 ### Steps:
- 	# Firstly connect your server via ssh or ip and pass  
- 	# Create a Directory and move to the directory - mkdir first_deployemnt  
- 	# Clone your project in your directory - git clone ssh link  
- 	# install required dependency for example install node/update  
- 		a. firstly check nvm version a package manager nvm --version # if do not exist then execute below command  
- 		b. curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash  
-		c. source ~/.bashrc   # or source ~/.zshrc if using Zsh  
-		d. nvm install 22  
-		e. node -v  
- 	# install npm - npm install  
- 	# Check your test case - npm run check  
- 	# run your application - npm start  
- 	Note: After running your application, it will be running on your terminal. If you close your terminal, then the application will be closed. To solve this problem, use pm2 - background process manager. It will keep your application running in the background.  
+```bash 
+# Firstly connect your server via ssh or ip and pass
+mkdir first_deployemnt #Create a Directory and move to the directory
+git clone #Clone your project in your directory
+# install required dependency for example install node/update 
+nvm --version # firstly check nvm version a package manager. if do not exist then execute below command
+       	b. curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash  
+		   c. source ~/.bashrc   # or source ~/.zshrc if using Zsh  
+		   d. nvm install 22  
+		   e. node -v 
+install npm # Install npm
+npm run check # Check your test case. This command will be different for your project wise
+npm start  # run your application
 
-## PM2 - Process Manager (run your application in the background and monitor the process)
+# Note: After running your application, it will be running on your terminal. If you close your terminal, then the application will be closed. To solve this problem, use pm2 - background process manager. It will keep your application running in the background.  
+
+```
+
+## 2. PM2 - Process Manager (run your application in the background and monitor the process)
 ### Steps: 
  	# Install pm2 - npm install -g pm2  
  	# Show status - pm2 status  
@@ -67,7 +71,7 @@ npm start
 		d. pm2 delete app_name  
 		Note: You can run all types of applications in the background using this process manager.  
 
-## NginX (To access your application without specifying a port, we use Nginx for port forwarding)
+## 3. NginX (To access your application without specifying a port, we use Nginx for port forwarding)
 ### Steps:  
 Info: HTTPS forwards to port 443, HTTP forwards to port 80, and SSH forwards to port 22.  
 	# First check NginX version - nginx -v // If not installed then follow the below command  
@@ -101,7 +105,7 @@ Info: HTTPS forwards to port 443, HTTP forwards to port 80, and SSH forwards to 
 
 So, managing this manually is cumbersome. To solve this, we implement **CI/CD**. Please follow the next steps.
 
-## Self-hosted runner setup for CI/CD
+## 4. Self-hosted runner setup for CI/CD
 
 ### Steps:  
 	# Create a directory in the root of the application - .github/workflow/cicd.yml  
@@ -117,7 +121,7 @@ So, managing this manually is cumbersome. To solve this, we implement **CI/CD**.
 		8. After pushing the code, deployment happens automatically.  
 		9. Sometimes, we need to build the application before deployment, e.g., in React/Next.js projects. Follow the build steps before deployment.  
 
-## Artifact (for managing build files before deployment)
+## 5. Artifact (for managing build files before deployment)
 
 ### Steps:  
 	# Write build yml instructions and use an artifact package to manage build files. Example given in the **CI/CD implementation repository**.  
