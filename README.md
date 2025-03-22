@@ -81,6 +81,7 @@ npm start  # run your application
 ## 3. NginX (To access your application without specifying a port, we use Nginx for port forwarding)
 ### Steps:  
 > HTTPS forwards to port 443, HTTP forwards to port 80, and SSH forwards to port 22.  
+
 	- First check NginX version - nginx -v  #If not installed then follow the below command  
 	- Install nginx - sudo apt-get install nginx  
 	- After installation, check if needed:  
