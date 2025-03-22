@@ -41,9 +41,6 @@ jobs:
               with:
                 name: build_folder
                 path: ./build 
-
-
-
     deploy:
       needs: build
       runs-on: self-hosted
