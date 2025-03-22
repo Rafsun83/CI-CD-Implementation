@@ -42,11 +42,13 @@ npm start
 
 ### Steps:
 ```bash 
-# Firstly connect your server via ssh or ip and pass
+1. Firstly connect your server via ssh or ip and pass
 
-mkdir first_deployemnt #Create a Directory and move to the directory
+#Create a Directory and move to the directory
+2. mkdir first_deployemnt 
 
-git clone #Clone your project in your directory
+#Clone your project in your directory
+3. git clone 
 
 # install required dependency for example install node/update 
 
