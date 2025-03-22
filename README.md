@@ -137,7 +137,7 @@ So, managing this manually is cumbersome. To solve this, we implement **CI/CD**.
 		1. **Upload artifact** - This is used in build yml instructions to upload build files.  
 		2. **Download artifact** - This is used in deploy yml instructions to download and deploy the build.  
 
-## Note: Every instruction depends on the previous steps.  
+#### Note: Every instruction depends on the previous steps.  
 - **Deployment depends on the build process**  
 - **Build depends on testing**  
 
