@@ -51,21 +51,25 @@ npm start
 3. git clone 
 
 # install required dependency for example install node/update 
+# firstly check nvm version a package manager.
+4. nvm --version
 
-nvm --version # firstly check nvm version a package manager. if do not exist then execute below command
+         #if do not exist then execute below command
        	a. curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash  
-		   b. source ~/.bashrc   # or source ~/.zshrc if using Zsh  
+		   b. source ~/.bashrc 
 		   c. nvm install 22  
 		   d. node -v 
 
-`install npm` # Install npm
+# Install npm
+5. install npm 
 
-npm run check # Check your test case. This command will be different for your project wise
+# Check your test case. This command will be different for your project wise
+6. npm run check 
 
-npm start  # run your application
+# run your application
+7. npm start  
 
 # Note: After running your application, it will be running on your terminal. If you close your terminal, then the application will be closed. To solve this problem, use pm2 - background process manager. It will keep your application running in the background.  
-
 ```
 
 ## 2. PM2 - Process Manager (run your application in the background and monitor the process)
