@@ -90,7 +90,7 @@ npm start
 	b. pm2 reload app_name  
 	c. pm2 stop app_name  
 	d. pm2 delete app_name  
-   
+
 #Note: You can run all types of applications in the background using this process manager.  
 ```
 
@@ -98,29 +98,43 @@ npm start
 ### Steps:  
 > HTTPS forwards to port 443, HTTP forwards to port 80, and SSH forwards to port 22.  
 
-	- First check NginX version - nginx -v  #If not installed then follow the below command  
-	- Install nginx - sudo apt-get install nginx  
-	- After installation, check if needed:  
-			a. Check if nginx is running - sudo systemctl status nginx  
-			b. Start nginx - sudo systemctl start nginx  
-			c. Restart nginx - sudo systemctl restart nginx  
-			d. Check configuration errors - sudo nginx -t  
-			e. If configuration is correct, you will see - nginx: configuration file /etc/nginx/nginx.conf test is successful  
-			f. Check nginx process running port - sudo netstat -tulnp | grep nginx  
-			g. Check nginx logs error - sudo tail -f /var/log/nginx/access.log  
+```bash
+#First check NginX version
+1. nginx -v
 
-	# Go to config file - cd /etc/nginx/sites-available  
-	# Customize server for port forwarding -  
-	```nginx
-	location / {
-		proxy_pass http://127.0.0.1:5000;
-                proxy_set_header Host $host;
-                proxy_set_header X-Real-Ip $remote_addr;
-                proxy_set_header X-Forwarded-for $proxy_add_x_forwarded_for;
-	}
-	```  
-        # After configuring restart the server - sudo service nginx restart all  
-        # SSL for HTTPS - using certbot  
+#If not installed then follow the below command:
+
+#Install nginx
+1. sudo apt-get install nginx  
+
+#After installation, check if needed:  
+	a. sudo systemctl status nginx #Check if nginx is running   
+	b. sudo systemctl start nginx  #Start nginx    
+	c. sudo systemctl restart nginx #Restart nginx   
+	d. sudo nginx -t  #Check configuration errors   
+	e. nginx: configuration file /etc/nginx/nginx.conf test is successful #If configuration is correct, you will see   
+	f. sudo netstat -tulnp | grep nginx #Check nginx process running port   
+	g. sudo tail -f /var/log/nginx/access.log #Check nginx logs error   
+
+# Go to config file
+2. cd /etc/nginx/sites-available
+
+# Customize server for port forwarding -  
+3.
+`
+location / {
+proxy_pass http://127.0.0.1:5000;
+proxy_set_header Host $host;
+proxy_set_header X-Real-Ip $remote_addr;
+proxy_set_header X-Forwarded-for $proxy_add_x_forwarded_for;
+}
+`
+	
+# After configuring restart the server
+4. sudo service nginx restart all  
+
+# SSL for HTTPS - using certbot 
+``` 
 
 #### Note: After completing a manual deployment, the main issue arises when changes need to be made to the application. You would have to redeploy manually by following:  
 1. git pull to the directory  
