@@ -1,9 +1,20 @@
 name: CICD Pipeline
 
 on: [push]
+# on: [push, pull_request]
+# on: 
+#   push:
+#     branches: 
+#       - python
+#       - java
+#   pull_request:
+#     branches:
+#       - java
+#       - c++
 
 jobs:
     test: 
+        # runs-on: [ubuntu-latest, windows-lates, macos-latest]
         runs-on: ubuntu-latest
         env: 
           SECRETS_VAR: ${{secrets.SECRETS_VAR}}
