@@ -26,7 +26,7 @@ jobs:
             - name: Prints the secrets
               run: |
                 echo "The secrets is: ${SECRETS_VAR}"
-                ECHO "The secrets variable is: ${DEV}"
+                echo "The secrets variable is: ${DEV}"
     build:
       needs: test
       runs-on: ubuntu-latest
