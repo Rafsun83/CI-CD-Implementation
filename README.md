@@ -153,23 +153,33 @@ So, managing this manually is cumbersome. To solve this, we implement **CI/CD**.
 
 # Write yml code instructions -  
 # Example of yml in my CICD implementation project  
-		1. First, implement application tests - like writing test cases in the yml file. 
+		
+#First, implement application tests by yml instructioin
+1. writing yml instructions for test. 
 
-		2. Then, after the test, we need deployment. But currently, the VPS is not connected to Git, so the VPS doesn't understand when we push code to Git. We solve this problem by setting up a GitHub runner. We delete the previous application directory from the VPS server, create another directory, and execute some commands from the GitHub runner.  
+# Then, after the test, we need deployment. But currently, the VPS is not connected to Git, so the VPS doesn't understand when we push code to Git. We solve this problem by setting up a GitHub runner. We delete the previous application directory from the VPS server, create another directory, and execute some commands from the GitHub runner.
+2. Configure git runner by git runner command
 
-		3. After executing all commands successfully, configure the GitHub runner.  
+# After executing all commands successfully, run GitHub runner.
+3. ./run.sh  
 
-		4. Then, run it using the following command - `./run.sh` // However, this command has limitations. When you close the terminal, it stops automatically. To solve this, use `./svc.sh` or `pm2`. Since `./svc.sh` is GitHub's built-in process manager, we will use it.  
+# However, this command has limitations. When you close the terminal, it stops automatically. To solve this, use
+4. ./svc.sh # firstly install it. it is GitHub's built-in process manager, we will use it.
 
-		5. Solve this problem by installing - `sudo ./svc.sh install`  
+# Solve this problem by installing
+5. sudo ./svc.sh install  
 
-		6. After installation, start the runner - `sudo ./svc.sh start`  
+# After installation, start the runner
+6. sudo ./svc.sh start  
 
-		7. Now, write yml instructions for deployment after test execution. Example written in the **CI/CD implementation repository**.  
+#Now, write yml instructions for deployment after test execution.
+7. Example written in the **CI/CD implementation repository**.  
 
-		8. After pushing the code, deployment happens automatically.  
-      
-		9. Sometimes, we need to build the application before deployment, e.g., in React/Next.js projects. Follow the build steps before deployment.
+#deployment happens automatically
+8. After pushing the code.  
+
+# Sometimes, we need to build the application before deployment
+9. e.g., in React/Next.js projects. Follow the build steps before deployment.
 ```  
 
 ## 5. Artifact (for managing build files before deployment)
