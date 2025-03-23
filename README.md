@@ -198,6 +198,39 @@ So, managing this manually is cumbersome. To solve this, we implement **CI/CD**.
 - **Build depends on testing**  
 
 
+## 6. Workflow dispatch (Work flow dispatch on yml code as example)
+```yaml
+# Example of on:
+on: 
+  workflow_dispatch:
+      inputs:
+          environment: 
+              description: 'Select Environment'
+              required: true
+              default: 'staging'
+              type: choice
+              options:
+                - staging
+                - production
+
+# Example of workflow dispatch jobs define
+jobs:
+    clean_everything:
+        runs-on: ubuntu-latest
+        steps:              
+            - name: Cleaning DB
+              run: echo "Cleaning The Database"
+
+            - name: If Enviroment is staging
+              if: ${{github.event.inputs.environment == 'staging'}}
+              run: echo "Environment is staging"
+            
+            - name: If environment is production
+              if: ${{github.event.inputs.environment == 'production'}}
+              run: echo "Environment is production"
+```
+
+
 
 
 
