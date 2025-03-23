@@ -1,6 +1,6 @@
 name: CICD Pipeline
 
-on: [push]
+# on: [push]
 
 # This on will run be push and pull_request both
 # on: [push, pull_request]
