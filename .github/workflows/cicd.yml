@@ -1,6 +1,6 @@
 name: CICD Pipeline
 
-# on: [push]
+on: [push]
 
 # This on will run be push and pull_request both
 # on: [push, pull_request]
@@ -17,17 +17,17 @@ name: CICD Pipeline
 #       - c++
 
 # This on is for workflow dispatch. you can deploy or occuring another action by click and selection
-on: 
-  workflow_dispatch:
-      inputs:
-          enviroment: 
-              description: 'Select Environment'
-              required: true
-              default: 'staging'
-              type: choice
-              options:
-                - staging
-                - production
+# on: 
+#   workflow_dispatch:
+#       inputs:
+#           enviroment: 
+#               description: 'Select Environment'
+#               required: true
+#               default: 'staging'
+#               type: choice
+#               options:
+#                 - staging
+#                 - production
 
 jobs:
     # clean_everything:
