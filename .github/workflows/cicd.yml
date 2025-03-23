@@ -34,7 +34,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Cleaning DB
-            - run: echo "Cleaning The Database"
+              run: echo "Cleaning The Database"
 
     test: 
         # runs-on: [ubuntu-latest, windows-lates, macos-latest]
