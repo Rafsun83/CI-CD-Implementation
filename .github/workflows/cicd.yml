@@ -1,6 +1,6 @@
 name: CICD Pipeline
 
-on: [push]
+# on: [push]
 
 # This on will run be push and pull_request both
 # on: [push, pull_request]
@@ -16,7 +16,7 @@ on: [push]
 #       - java
 #       - c++
 
-
+# This on is for workflow dispatch. you can deploy or occuring another action by click and selection
 on: 
   workflow_dispatch:
       inputs:
