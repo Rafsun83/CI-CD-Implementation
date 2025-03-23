@@ -230,7 +230,23 @@ jobs:
               run: echo "Environment is production"
 ```
 
+## 7. Schedular ( Schedule add use cron jobs for occuring any actions by click)
 
+```yaml 
+on: 
+  schedule:
+      - cron: "5 4 * *" # cron calculate by crontab guru site
 
+jobs:
+    scheduled_task:
+        steps:
+            - name: Print something..
+              run: echo "Schedule makes perfact"
+    
+```
+
+## 8. Branch protection rules:
+ - Set rules for branch protection from repo > settings > rules > rules-set
+ - set rules by pattern dev/rafsun
 
 
