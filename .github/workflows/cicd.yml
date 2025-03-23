@@ -17,17 +17,17 @@ on: [push]
 #       - c++
 
 # This on is for workflow dispatch. you can deploy or occuring another action by click and selection
-# on: 
-#   workflow_dispatch:
-#       inputs:
-#           enviroment: 
-#               description: 'Select Environment'
-#               required: true
-#               default: 'staging'
-#               type: choice
-#               options:
-#                 - staging
-#                 - production
+on: 
+  workflow_dispatch:
+      inputs:
+          environment: 
+              description: 'Select Environment'
+              required: true
+              default: 'staging'
+              type: choice
+              options:
+                - staging
+                - production
 
 jobs:
     # clean_everything:
