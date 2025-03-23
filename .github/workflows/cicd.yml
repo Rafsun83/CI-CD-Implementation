@@ -1,6 +1,6 @@
 name: CICD Pipeline
 
-# on: [push]
+on: [push]
 
 # This on will run be push and pull_request both
 # on: [push, pull_request]
@@ -17,27 +17,45 @@ name: CICD Pipeline
 #       - c++
 
 # This on is for workflow dispatch. you can deploy or occuring another action by click and selection
-on: 
-  workflow_dispatch:
-      inputs:
-          environment: 
-              description: 'Select Environment'
-              required: true
-              default: 'staging'
-              type: choice
-              options:
-                - staging
-                - production
+# on: 
+#   workflow_dispatch:
+#       inputs:
+#           environment: 
+#               description: 'Select Environment'
+#               required: true
+#               default: 'staging'
+#               type: choice
+#               options:
+#                 - staging
+#                 - production
+
+
+#This is schedular job for get back up someting ar create actions on fixed time
+# on: 
+#   schedule:
+#       - cron: "5 4 * *"
 
 jobs:
-    clean_everything:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout repo
-              uses: actions/checkout@v3
-              
-            - name: Cleaning DB
-              run: echo "Cleaning The Database"
+    # This is workflow dispatch job of create action by click or select depends on user
+    # clean_everything:
+    #     runs-on: ubuntu-latest
+    #     steps:              
+    #         - name: Cleaning DB
+    #           run: echo "Cleaning The Database"
+
+    #         - name: If Enviroment is staging
+    #           if: ${{github.event.inputs.environment == 'staging'}}
+    #           run: echo "Environment is staging"
+            
+    #         - name: If environment is production
+    #           if: ${{github.event.inputs.environment == 'production'}}
+    #           run: echo "Environment is production"
+
+    #This is schedular job for get back up someting ar create actions on fixed time
+    # scheduled_task:
+    #     steps:
+    #         - name: Print something..
+    #           run: echo "Schedule makes perfact"
 
     test: 
         # runs-on: [ubuntu-latest, windows-lates, macos-latest]
