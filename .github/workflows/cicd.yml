@@ -30,7 +30,6 @@ on:
                 - production
 
 jobs:
-
     clean_everything:
         runs-on: ubuntu-latest
         steps:
