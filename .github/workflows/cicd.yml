@@ -33,6 +33,9 @@ jobs:
     clean_everything:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout repo
+              uses: actions/checkout@v3
+              
             - name: Cleaning DB
               run: echo "Cleaning The Database"
 
