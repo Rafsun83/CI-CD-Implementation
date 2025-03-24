@@ -251,6 +251,7 @@ jobs:
 
 
 ## 9. Shell Script (How to use shell script for automation to your work)
+> Here is a sample script file for automate your work. and uses field is server configuration or inside yml instruction or AWS server configuration and so many options to esier to work.
 
 ```bash
 #Create and open a script file
