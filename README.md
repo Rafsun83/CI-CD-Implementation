@@ -252,7 +252,7 @@ jobs:
 
 ## 9. Shell Script (How to use shell script for automation to your work)
 > Here is a sample script file for automate your work. and uses field is server configuration or inside yml instruction or AWS server configuration and so many options to esier to work.
-
+### Steps: for create a script file and write 
 ```bash
 #Create and open a script file
 nano try.sh
@@ -266,7 +266,7 @@ sudo nano try.sh
 #add permission
 chmod +x ./try.sh #apply acceess
 ```
-
+### Steps: A sample written script file
 ```sh
 #!/bin/bash
 
