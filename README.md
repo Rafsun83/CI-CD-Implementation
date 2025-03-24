@@ -54,8 +54,8 @@ npm start
 # firstly check nvm version a package manager.
 4. nvm --version
 
-   #if do not exist then execute below command
-   a. curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash  
+   	#if do not exist then execute below command
+   	a. curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash  
 	b. source ~/.bashrc 
 	c. nvm install 22  
 	d. node -v 
