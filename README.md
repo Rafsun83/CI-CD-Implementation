@@ -250,3 +250,41 @@ jobs:
  - set rules by pattern dev/rafsun
 
 
+## 9. Shell Script (How to use shell script for automation to your work)
+
+```bash
+#Create and open a script file
+nano try.sh
+
+#check file has editable access
+ls -l #check file acess
+
+#open .sh file by sudo
+sudo nano try.sh
+
+#add permission
+chmod +x ./try.sh #apply acceess
+```
+
+```sh
+#!/bin/bash
+
+echo "Installing Nginx..."
+sudo apt-get install nginx -y
+
+echo "Intsalling nvm for node..."
+sudo apt install curl -y
+
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+
+#after run will get an instruction for execute. That's the command will be run here.
+
+#Intsalling Node
+nvm install node
+
+#Node version check
+node -v
+
+#Intsall pm2
+npm install -g pm2 
+```
