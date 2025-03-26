@@ -143,6 +143,53 @@ proxy_set_header X-Forwarded-for $proxy_add_x_forwarded_for;
 
 So, managing this manually is cumbersome. To solve this, we implement **CI/CD**. Please follow the next steps.
 
+#### A. Optional (Static index.html file show from nginX web-server):
+```bash
+#1️⃣ Find Nginx’s Document Root Directory
+#By default, the document root directory is:
+cd /var/www/html/
+
+#To confirm, check your Nginx configuration file:
+cat /etc/nginx/sites-available/default | grep root
+
+#After check, This will show a line like:
+root /var/www/html;
+
+#2️⃣ Create the index.html File to the root directory. (You can see already exist a file but you can edit that file if you want or create a file)
+#Navigate the root directory
+cd /var/www/html/
+
+#Create and edit the index.html file:
+sudo nano index.html
+
+# Add html content 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Nginx Server</title>
+</head>
+<body>
+    <h1>Hello, Nginx is working!</h1>
+</body>
+</html>
+
+
+#3️⃣ Adjust File Permissions
+#Ensure that Nginx can read the file:
+sudo chmod -R 755 /var/www/html/
+sudo chown -R www-data:www-data /var/www/html/
+
+
+#4️⃣ Restart Nginx to Apply Changes
+sudo systemctl restart nginx
+
+#Test web server 
+http://127.0.0.1/
+```
+
+
 ## 4. Self-hosted runner setup for CI/CD
 
 ### Steps:  
