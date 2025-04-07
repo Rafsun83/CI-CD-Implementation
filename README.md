@@ -190,7 +190,6 @@ http://127.0.0.1/
 ```
 Important-blog: [NGINX - Zero To Hero: Your Ultimate Guide from Beginner to Advanced Mastery](https://medium.com/@ksaquib/nginx-zero-to-hero-your-ultimate-guide-from-beginner-to-advanced-mastery-57e2dad6a77a)
 
-
 ## 4. Self-hosted runner setup for CI/CD
 
 ### Steps:  
