@@ -279,6 +279,7 @@ jobs:
 ```
 
 ## 7. Schedular ( Schedule add use cron jobs for occuring any actions by click)
+> When you wants to clean data base by schedule wise then you need to set schedular
 
 ```yaml 
 on: 
