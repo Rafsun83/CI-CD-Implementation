@@ -246,6 +246,7 @@ Important-blog: [NGINX - Zero To Hero: Your Ultimate Guide from Beginner to Adva
 
 
 ## 6. Workflow dispatch (Work flow dispatch on yml code as example)
+> Workflow dispatch need to when you are wants to deploy or if you wants to clean data base of staging or development server then, you will use workflow dispatch.
 ```yaml
 # Example of on:
 on: 
