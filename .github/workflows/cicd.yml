@@ -29,7 +29,6 @@ on: [push]
 #                 - staging
 #                 - production
 
-
 #This is schedular job for get back up someting ar create actions on fixed time
 # on: 
 #   schedule:
